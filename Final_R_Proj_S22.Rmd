@@ -1,0 +1,62 @@
+---
+title: "Final_R_Proj_S22"
+output: html_document
+---
+
+Vaccination Rate vs Median Household Income
+
+Sources:
+ - JHU Covid Data: https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/us_data/time_series/people_vaccinated_us_timeline.csv
+ - Median Household Income Data: https://data.census.gov/cedsci/table?q=median%20household%20income&g=0100000US%240400000&tid=ACSST5Y2020.S1901&tp=true
+ - Population Data: https://data.census.gov/cedsci/table?t=Populations%20and%20People&g=0100000US%240400000&tid=DECENNIALPL2020.P1&tp=true
+ - Education Level: https://data.census.gov/cedsci/table?t=School%20Enrollment&g=0100000US%240400000&tid=ACSST5Y2020.S1501&tp=true
+ - Home Values: https://data.census.gov/cedsci/table?t=Homeownership%20Rate&g=0100000US%240400000&tid=ACSDP5Y2020.DP04&tp=true
+ - Health Insurance: https://data.census.gov/cedsci/table?t=Health%20Insurance&g=0100000US%240400000&tid=ACSST5Y2020.S2701
+ 
+```{r}
+data <- read.csv(file = 'vaccineincomerdata.csv')
+head(data)
+
+plot(x = data$Median.Household.Income,
+     y = data$Vax.Rate,
+     xlab = "Median Household Income",
+     ylab = "Vaccination Rate",
+     main = "Vaccination Rate vs Median Household Income")
+
+```
+
+
+```{r}
+data <- read.csv(file = 'vaccineincomerdata.csv')
+head(data)
+
+plot(x = data$Bachelors.Or.Higher,
+     y = data$Vax.Rate,
+     xlab = "Bachelor's or Higher",
+     ylab = "Vaccination Rate",
+     main = "Vaccination Rate vs Bachelor's or Higher")
+
+```
+```{r}
+data <- read.csv(file = 'vaccineincomerdata.csv')
+head(data)
+
+plot(x = data$Median.Home.Value,
+     y = data$Vax.Rate,
+     xlab = "Median Home Value",
+     ylab = "Vaccination Rate",
+     main = "Vaccination Rate vs Median Home Value")
+
+```
+
+```{r}
+data <- read.csv(file = 'vaccineincomerdata.csv')
+head(data)
+
+plot(x = data$Percent.Health.Insurance,
+     y = data$Vax.Rate,
+     xlab = "Percent Health Insurance",
+     ylab = "Vaccination Rate",
+     main = "Vaccination Rate vs Percent Health Insurance")
+
+```
